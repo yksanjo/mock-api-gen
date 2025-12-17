@@ -1,5 +1,10 @@
 # mock-api-gen
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.8+-green.svg)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+![GitHub](https://img.shields.io/github/stars/yksanjo/mock-api-gen?style=social)
+
 Generate instant REST APIs from JSON schemas or OpenAPI specs. Perfect for frontend development, testing, and prototyping.
 
 ## Features
