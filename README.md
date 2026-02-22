@@ -1,134 +1,84 @@
 # mock-api-gen
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.8+-green.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![GitHub](https://img.shields.io/github/stars/yksanjo/mock-api-gen?style=social)
+## Detailed Description
 
-Generate instant REST APIs from JSON schemas or OpenAPI specs. Perfect for frontend development, testing, and prototyping.
+mock-api-gen is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-## Features
+## Problem Statement
 
-- 🚀 Generate CRUD endpoints automatically
-- 📝 Support for JSON schema and OpenAPI/Swagger specs
-- 💾 In-memory database with optional persistence
-- 🌐 CORS enabled by default
-- ⚙️ Customizable port and host
-- 🔄 Hot reload support
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-## Installation
+## Solution Overview
 
-```bash
-pip install -e .
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-Or install globally:
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
+
 ```bash
-pip install .
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
 ## Usage
 
-### Basic Usage
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-Generate an API from a JSON schema:
+## Quality Standards
 
-```bash
-mock-api-gen schema.json
-```
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### With Custom Port
+## Security
 
-```bash
-mock-api-gen schema.json --port 8000
-```
-
-### From OpenAPI Spec
-
-```bash
-mock-api-gen api-spec.yaml --port 3000
-```
-
-## Schema Format
-
-### Simple JSON Schema
-
-```json
-{
-  "users": {
-    "id": "number",
-    "name": "string",
-    "email": "string"
-  },
-  "posts": {
-    "id": "number",
-    "title": "string",
-    "content": "string",
-    "userId": "number"
-  }
-}
-```
-
-### OpenAPI/Swagger Format
-
-The tool also supports standard OpenAPI 3.0 YAML files.
-
-## Generated Endpoints
-
-For each resource, the following endpoints are automatically generated:
-
-- `GET /{resource}` - List all items
-- `GET /{resource}/{id}` - Get item by ID
-- `POST /{resource}` - Create new item
-- `PUT /{resource}/{id}` - Update item
-- `DELETE /{resource}/{id}` - Delete item
-
-## Examples
-
-### Example 1: Simple API
-
-```bash
-# Create schema.json
-echo '{"products": {"id": "number", "name": "string", "price": "number"}}' > schema.json
-
-# Generate API
-mock-api-gen schema.json
-
-# Test the API
-curl http://localhost:8000/products
-```
-
-### Example 2: Multiple Resources
-
-```json
-{
-  "users": {
-    "id": "number",
-    "name": "string",
-    "email": "string"
-  },
-  "posts": {
-    "id": "number",
-    "title": "string",
-    "userId": "number"
-  }
-}
-```
-
-This generates endpoints for both `/users` and `/posts`.
-
-## API Documentation
-
-Once the server is running, visit:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
-
-## License
-
-MIT License - see LICENSE file for details
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
 ## Contributing
 
-Contributions welcome! Please open an issue or submit a pull request.
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
+## Roadmap
 
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
+
+## License
+
+This project is released under the MIT License.
